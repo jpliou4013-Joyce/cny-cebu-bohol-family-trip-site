@@ -13,6 +13,7 @@
     .section{padding:20px 0 58px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:24px}.section h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.2;margin:8px 0}.section-head p{max-width:420px;color:var(--muted);margin:0}.holiday{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;background:var(--white);border:1px solid var(--line);border-radius:22px;padding:22px 26px;margin:22px 0 10px;box-shadow:0 10px 26px #183b3b08}.date-badge{width:66px;height:66px;display:grid;place-items:center;border-radius:20px;background:#f8e9d4;color:#8e5639;font-weight:900;text-align:center;line-height:1.2}.date-badge b{font-size:1.35rem}.holiday p{margin:2px 0;color:var(--muted)}.tag{font-size:.76rem;border-radius:999px;padding:7px 12px;background:var(--mint);color:#275b50;font-weight:800;white-space:nowrap}
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:22px;min-height:200px}.card .icon{width:46px;height:46px;border-radius:15px;background:var(--mint);display:grid;place-items:center;font-size:1.35rem}.card h3{margin:13px 0 6px;font-size:1.12rem}.card p{color:var(--muted);font-size:.93rem;margin:0}.why{padding-top:22px}
     .itinerary{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.day{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:18px 16px;position:relative}.day .num{color:var(--coral);font-size:.78rem;font-weight:900;letter-spacing:.08em}.day h3{font-size:1rem;line-height:1.35;margin:7px 0}.day p{font-size:.86rem;color:var(--muted);margin:0}.day small{display:block;margin-top:12px;color:var(--teal);font-weight:800;font-size:.78rem}
+    .music-grid .card{display:flex;flex-direction:column;align-items:flex-start}.music-grid .card p:last-child{margin-top:auto;padding-top:14px}.music-grid .btn{font-size:.78rem;padding:9px 12px;box-shadow:none}
     .filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.filter{border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 15px;color:var(--muted);cursor:pointer}.filter[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}.tip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tip{background:#e7f0e9;border-radius:20px;padding:20px}.tip h3{margin:0 0 7px;font-size:1rem}.tip p{margin:0;color:#536a63;font-size:.9rem}.tip[hidden]{display:none}
     .checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:15px 17px;display:flex;gap:11px;align-items:flex-start}.check span{color:var(--coral);font-weight:900}.check p{margin:0;color:var(--muted);font-size:.92rem}.sources{border-top:1px solid var(--line);padding:30px 0 48px;color:var(--muted);font-size:.83rem}.sources a{color:var(--teal)}.sources ul{padding-left:20px}.foot{font-size:.8rem;color:#7d8984;margin-top:20px}
     @media(max-width:800px){.hero{min-height:510px;margin-bottom:48px}.hero:before{right:-170px;top:-70px}.hero:after{right:-250px}.cards,.tip-grid{grid-template-columns:1fr 1fr}.itinerary{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:10px}}
@@ -22,7 +23,7 @@
 <body>
   <header class="wrap nav">
     <div class="brand">慢慢走<span>・</span>旅行提案</div>
-    <nav aria-label="主要導覽"><a href="#idea">旅行想法</a><a href="#plan">五日行程</a><a href="#prepare">出發準備</a></nav>
+    <nav aria-label="主要導覽"><a href="#idea">旅行想法</a><a href="#plan">五日行程</a><a href="#music">景點配樂</a><a href="#prepare">出發準備</a></nav>
   </header>
   <main>
     <section class="hero wrap" aria-labelledby="title">
@@ -54,6 +55,18 @@
         <article class="day"><div class="num">DAY 04</div><h3>薄荷島自然一日</h3><p>可安排巧克力山、眼鏡猴保育區與羅博河一帶。巧克力山觀景台約有 200 階，長輩同行先評估體力。</p><small>重點：包車或當地團較省力</small></article>
         <article class="day"><div class="num">DAY 05</div><h3>海邊放空・返程</h3><p>依航班或船班時間安排早餐與短程活動。交通銜接要留緩衝，不壓線轉乘。</p><small>重點：先確認返程交通</small></article>
       </div>
+    </section>
+
+    <section class="section wrap" id="music">
+      <div class="section-head"><div><div class="eyebrow">Soundtrack for the trip</div><h2>每個景點，配一段旅途旋律</h2></div><p>依照景點氣氛挑選免付費聆聽的音樂。點選曲名會前往 Pixabay 原曲頁面播放；網站不會自動播放。</p></div>
+      <div class="cards music-grid">
+        <article class="card"><div class="icon" aria-hidden="true">🏛️</div><div class="eyebrow">溫暖木吉他</div><h3>宿霧市區・歷史散步</h3><p>用溫柔的指彈民謠，陪著老街與歷史地標慢慢走。</p><p><a class="btn" href="https://pixabay.com/music/acoustic-group-acoustic-guitar-simple-emotion-folk-322755/" target="_blank" rel="noreferrer">聆聽：Acoustic Guitar Folk ↗</a></p></article>
+        <article class="card"><div class="icon" aria-hidden="true">🏝️</div><div class="eyebrow">輕快烏克麗麗</div><h3>麥克坦・海邊放空</h3><p>明亮的烏克麗麗和輕節奏，適合海風、沙灘與夕陽。</p><p><a class="btn" href="https://pixabay.com/music/island-in-the-tropics-154337/" target="_blank" rel="noreferrer">聆聽：In the Tropics ↗</a></p></article>
+        <article class="card"><div class="icon" aria-hidden="true">⛰️</div><div class="eyebrow">悠緩指彈旋律</div><h3>巧克力山・看山景</h3><p>舒緩的吉他旋律，配上開闊山景，讓行程慢下來。</p><p><a class="btn" href="https://pixabay.com/music/solo-guitar-drifting-with-the-tide-453679/" target="_blank" rel="noreferrer">聆聽：Drifting with the Tide ↗</a></p></article>
+        <article class="card"><div class="icon" aria-hidden="true">🌳</div><div class="eyebrow">森林氛圍音樂</div><h3>眼鏡猴保育區・安靜觀察</h3><p>柔和的森林氛圍音樂，適合放慢腳步、安靜感受自然。</p><p><a class="btn" href="https://pixabay.com/music/meditationspiritual-morning-in-the-forest-347089/" target="_blank" rel="noreferrer">聆聽：Morning in the Forest ↗</a></p></article>
+        <article class="card"><div class="icon" aria-hidden="true">🛶</div><div class="eyebrow">河畔長笛與環境音</div><h3>羅博河・悠閒遊船</h3><p>搭配流動水聲與輕柔長笛，讓河上巡遊更有放鬆感。</p><p><a class="btn" href="https://pixabay.com/music/meditationspiritual-peaceful-music-nearby-a-little-river-running-water-clam-160900/" target="_blank" rel="noreferrer">聆聽：Peaceful River Music ↗</a></p></article>
+      </div>
+      <p class="foot">音樂由 Pixabay 曲目頁提供，網站只連結至原曲，不下載或重新上傳音檔。曲目依 Pixabay 內容授權提供；使用方式請參閱 <a href="https://pixabay.com/service/license-summary/" target="_blank" rel="noreferrer">授權摘要</a>。</p>
     </section>
 
     <section class="section wrap" aria-labelledby="family-title">
