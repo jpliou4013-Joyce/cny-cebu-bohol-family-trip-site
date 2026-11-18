@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f4ed">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="慢慢走">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/app-192.png">
   <title>一起去海島過年｜宿霧 × 薄荷島家族旅行提案</title>
   <style>
     :root{--ink:#183b3b;--muted:#62716d;--teal:#176d68;--mint:#d9eee5;--coral:#e58768;--sand:#f7f4ed;--white:#fffefa;--line:#e5e4dc;--gold:#edc783}
@@ -14,10 +19,11 @@
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:22px;min-height:200px}.card .icon{width:46px;height:46px;border-radius:15px;background:var(--mint);display:grid;place-items:center;font-size:1.35rem}.card h3{margin:13px 0 6px;font-size:1.12rem}.card p{color:var(--muted);font-size:.93rem;margin:0}.why{padding-top:22px}
     .itinerary{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.day{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:18px 16px;position:relative}.day .num{color:var(--coral);font-size:.78rem;font-weight:900;letter-spacing:.08em}.day h3{font-size:1rem;line-height:1.35;margin:7px 0}.day p{font-size:.86rem;color:var(--muted);margin:0}.day small{display:block;margin-top:12px;color:var(--teal);font-weight:800;font-size:.78rem}
     .music-grid .card{display:flex;flex-direction:column;align-items:flex-start}.music-grid .card p:last-child{margin-top:auto;padding-top:14px}.music-grid .btn{font-size:.78rem;padding:9px 12px;box-shadow:none}
+    .app-strip{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:4px auto 28px;padding:18px 22px;background:#e4f0e9;border:1px solid #cfe1d6;border-radius:20px}.app-strip p{margin:3px 0 0;color:var(--muted);font-size:.9rem}.app-strip .eyebrow{letter-spacing:.1em}.app-strip .btn{white-space:nowrap;box-shadow:none;border:0;cursor:pointer}.app-help{display:none;margin:0 auto 28px;padding:20px;background:var(--white);border:1px solid var(--line);border-radius:18px}.app-help.open{display:block}.app-help h3{margin:0 0 8px}.app-help ol{margin:8px 0;padding-left:22px;color:var(--muted)}.app-status{font-size:.82rem;color:var(--teal);font-weight:700}
     .filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.filter{border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 15px;color:var(--muted);cursor:pointer}.filter[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}.tip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tip{background:#e7f0e9;border-radius:20px;padding:20px}.tip h3{margin:0 0 7px;font-size:1rem}.tip p{margin:0;color:#536a63;font-size:.9rem}.tip[hidden]{display:none}
-    .checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:15px 17px;display:flex;gap:11px;align-items:flex-start}.check span{color:var(--coral);font-weight:900}.check p{margin:0;color:var(--muted);font-size:.92rem}.sources{border-top:1px solid var(--line);padding:30px 0 48px;color:var(--muted);font-size:.83rem}.sources a{color:var(--teal)}.sources ul{padding-left:20px}.foot{font-size:.8rem;color:#7d8984;margin-top:20px}
+    .checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:15px 17px;display:flex;gap:11px;align-items:flex-start;cursor:pointer}.check input{width:20px;height:20px;accent-color:var(--teal);flex:none;margin:2px 2px 0 0}.check span{color:var(--coral);font-weight:900}.check p{margin:0;color:var(--muted);font-size:.92rem}.check:has(input:checked){background:#e7f0e9;border-color:#bad4c7}.check:has(input:checked) p{color:#62716d}.progress-row{display:flex;align-items:center;gap:12px;margin:16px 0 20px;color:var(--muted);font-size:.9rem}.progress-row progress{flex:1;height:10px;accent-color:var(--teal)}.progress-row strong{color:var(--teal)}.progress-row button{border:0;background:transparent;color:var(--teal);text-decoration:underline;cursor:pointer}.offline-note{margin-top:10px;color:var(--muted);font-size:.82rem}.sources{border-top:1px solid var(--line);padding:30px 0 48px;color:var(--muted);font-size:.83rem}.sources a{color:var(--teal)}.sources ul{padding-left:20px}.foot{font-size:.8rem;color:#7d8984;margin-top:20px}
     @media(max-width:800px){.hero{min-height:510px;margin-bottom:48px}.hero:before{right:-170px;top:-70px}.hero:after{right:-250px}.cards,.tip-grid{grid-template-columns:1fr 1fr}.itinerary{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:10px}}
-    @media(max-width:540px){.wrap{width:min(100% - 28px,1120px)}.nav a{margin-left:12px;font-size:.8rem}.nav a:first-child{display:none}.hero{min-height:520px;padding:26px;border-radius:22px}.hero:before{width:330px;height:330px;right:-155px;top:10px}.hero:after{width:650px;height:210px;right:-260px;bottom:-62px}.hero-copy{align-self:flex-start}.hero p{font-size:.98rem}.holiday{grid-template-columns:auto 1fr;padding:16px;gap:12px}.holiday .tag{grid-column:2;justify-self:start}.cards,.tip-grid,.checklist{grid-template-columns:1fr}.itinerary{grid-template-columns:1fr}.day{display:grid;grid-template-columns:58px 1fr;column-gap:8px}.day .num{grid-row:span 3}.day h3{margin-top:0}.day small{margin-top:6px}}
+    @media(max-width:540px){.wrap{width:min(100% - 28px,1120px)}.nav a{margin-left:12px;font-size:.8rem}.nav a:first-child{display:none}.hero{min-height:520px;padding:26px;border-radius:22px}.hero:before{width:330px;height:330px;right:-155px;top:10px}.hero:after{width:650px;height:210px;right:-260px;bottom:-62px}.hero-copy{align-self:flex-start}.hero p{font-size:.98rem}.holiday{grid-template-columns:auto 1fr;padding:16px;gap:12px}.holiday .tag{grid-column:2;justify-self:start}.app-strip{align-items:flex-start;flex-direction:column;padding:16px}.app-help{padding:16px}.cards,.tip-grid,.checklist{grid-template-columns:1fr}.itinerary{grid-template-columns:1fr}.day{display:grid;grid-template-columns:58px 1fr;column-gap:8px}.day .num{grid-row:span 3}.day h3{margin-top:0}.day small{margin-top:6px}.progress-row{flex-wrap:wrap}.progress-row progress{min-width:140px}}
   </style>
 </head>
 <body>
@@ -25,6 +31,19 @@
     <div class="brand">慢慢走<span>・</span>旅行提案</div>
     <nav aria-label="主要導覽"><a href="#idea">旅行想法</a><a href="#plan">五日行程</a><a href="#music">景點配樂</a><a href="#prepare">出發準備</a></nav>
   </header>
+  <section class="app-strip wrap" aria-label="安裝手機旅遊 App">
+    <div><div class="eyebrow">Travel app</div><strong>把行程放到手機主畫面</strong><p>安裝後可快速開啟，已載入的行程與準備清單也能離線查看。</p></div>
+    <button class="btn" id="app-install-button" type="button">安裝／加入主畫面</button>
+  </section>
+  <section class="app-help wrap" id="app-install-help" aria-live="polite">
+    <h3>如何加到手機主畫面</h3>
+    <ol>
+      <li><strong>Android：</strong>用 Chrome 開啟網站，點右上角「⋮」，選「安裝應用程式」或「加到主畫面」。</li>
+      <li><strong>iPhone：</strong>用 Safari 開啟網站，點「分享」，選「加入主畫面」，再按「加入」。</li>
+    </ol>
+    <p class="app-status" id="app-status" role="status">正在準備離線行程…</p>
+    <p class="offline-note">準備清單只存在這支手機，不會自動同步到家人的裝置。景點配樂連結需要網路；機票、船班與營業時間仍請以最新公告為準。</p>
+  </section>
   <main>
     <section class="hero wrap" aria-labelledby="title">
       <div class="hero-copy">
@@ -81,11 +100,12 @@
 
     <section class="section wrap" id="prepare">
       <div class="section-head"><div><div class="eyebrow">Before you go</div><h2>過年出發前先確認</h2></div><p>春節屬熱門出遊時段，先處理交通和住宿，再慢慢挑餐廳及體驗活動。</p></div>
+      <div class="progress-row"><strong>準備進度</strong><progress id="prep-progress" max="4" value="0" aria-label="旅遊準備進度"></progress><span id="prep-count" aria-live="polite">0 / 4</span><button id="reset-prep" type="button">重設</button></div>
       <div class="checklist">
-        <div class="check"><span>01</span><p><strong>先比機票與住宿</strong><br>確認全家可出發日期、行李需求和房型，再訂可接受的方案。</p></div>
-        <div class="check"><span>02</span><p><strong>核對跨島船班</strong><br>查看營運日、行李規定、碼頭位置及延誤備案；不要只看行程表估算。</p></div>
-        <div class="check"><span>03</span><p><strong>預留交通緩衝</strong><br>機場、碼頭與住宿之間先安排接送，避免緊接下一段交通。</p></div>
-        <div class="check"><span>04</span><p><strong>出發前再看營業公告</strong><br>春節期間的景點、餐廳及船班可能調整，以官方公告和訂位回覆為準。</p></div>
+        <label class="check"><input type="checkbox" data-trip-task="tickets"><span>01</span><p><strong>先比機票與住宿</strong><br>確認全家可出發日期、行李需求和房型，再訂可接受的方案。</p></label>
+        <label class="check"><input type="checkbox" data-trip-task="ferry"><span>02</span><p><strong>核對跨島船班</strong><br>查看營運日、行李規定、碼頭位置及延誤備案；不要只看行程表估算。</p></label>
+        <label class="check"><input type="checkbox" data-trip-task="transport"><span>03</span><p><strong>預留交通緩衝</strong><br>機場、碼頭與住宿之間先安排接送，避免緊接下一段交通。</p></label>
+        <label class="check"><input type="checkbox" data-trip-task="hours"><span>04</span><p><strong>出發前再看營業公告</strong><br>春節期間的景點、餐廳及船班可能調整，以官方公告和訂位回覆為準。</p></label>
       </div>
     </section>
   </main>
@@ -105,6 +125,62 @@
       const selected = button.dataset.filter;
       tips.forEach(tip => { tip.hidden = selected !== 'all' && tip.dataset.kind !== selected; });
     }));
+
+    const installButton = document.querySelector('#app-install-button');
+    const installHelp = document.querySelector('#app-install-help');
+    const appStatus = document.querySelector('#app-status');
+    let installPrompt = null;
+    window.addEventListener('beforeinstallprompt', event => {
+      event.preventDefault();
+      installPrompt = event;
+      installButton.textContent = '安裝旅遊 APP';
+    });
+    installButton.addEventListener('click', async () => {
+      installHelp.classList.add('open');
+      if (!installPrompt) return;
+      installPrompt.prompt();
+      await installPrompt.userChoice;
+      installPrompt = null;
+    });
+    window.addEventListener('appinstalled', () => {
+      installButton.textContent = '已加入手機';
+      installButton.disabled = true;
+    });
+    if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true) {
+      installButton.textContent = '已加入手機';
+      installButton.disabled = true;
+    }
+
+    const prepKey = 'family-trip-preparation-v1';
+    const prepBoxes = [...document.querySelectorAll('[data-trip-task]')];
+    const prepProgress = document.querySelector('#prep-progress');
+    const prepCount = document.querySelector('#prep-count');
+    function savePrep() {
+      const state = Object.fromEntries(prepBoxes.map(box => [box.dataset.tripTask, box.checked]));
+      try { localStorage.setItem(prepKey, JSON.stringify(state)); } catch (_) {}
+      const complete = prepBoxes.filter(box => box.checked).length;
+      prepProgress.value = complete;
+      prepCount.textContent = `${complete} / ${prepBoxes.length}`;
+    }
+    try {
+      const savedPrep = JSON.parse(localStorage.getItem(prepKey) || '{}');
+      prepBoxes.forEach(box => { box.checked = savedPrep[box.dataset.tripTask] === true; });
+    } catch (_) {}
+    prepBoxes.forEach(box => box.addEventListener('change', savePrep));
+    document.querySelector('#reset-prep').addEventListener('click', () => {
+      prepBoxes.forEach(box => { box.checked = false; });
+      savePrep();
+    });
+    savePrep();
+
+    if ('serviceWorker' in navigator && window.isSecureContext) {
+      navigator.serviceWorker.register('./service-worker.js', { scope: './' })
+        .then(() => navigator.serviceWorker.ready)
+        .then(() => { appStatus.textContent = '離線行程已準備完成；配樂連結仍需網路。'; })
+        .catch(() => { appStatus.textContent = '目前可連網使用；首次載入後可準備離線行程。'; });
+    } else {
+      appStatus.textContent = '請使用 HTTPS 網址開啟，才能加入主畫面並準備離線內容。';
+    }
   </script>
 </body>
 </html>
