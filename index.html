@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ed">
+  <title>一起去海島過年｜宿霧 × 薄荷島家族旅行提案</title>
+  <style>
+    :root{--ink:#183b3b;--muted:#62716d;--teal:#176d68;--mint:#d9eee5;--coral:#e58768;--sand:#f7f4ed;--white:#fffefa;--line:#e5e4dc;--gold:#edc783}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--sand);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.7}a{color:inherit}button{font:inherit}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--teal)}
+    header{padding:20px 0}.nav{display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:.03em}.brand span{color:var(--coral)}.nav a{text-decoration:none;font-size:.9rem;color:var(--muted);margin-left:22px}
+    .hero{position:relative;overflow:hidden;isolation:isolate;min-height:560px;border-radius:30px;background:linear-gradient(126deg,#cfe9e3 0%,#f5e2c1 57%,#edb68d 100%);display:flex;align-items:center;padding:clamp(32px,7vw,86px);margin:12px auto 72px}.hero:before,.hero:after{content:"";position:absolute;z-index:-1;border-radius:50%}.hero:before{width:440px;height:440px;right:-45px;top:-140px;background:radial-gradient(circle at 40% 40%,#ffe5a7 0 31%,#f2ba78 32% 60%,transparent 61%);opacity:.9}.hero:after{width:800px;height:250px;right:-90px;bottom:-72px;background:linear-gradient(180deg,#4d9d91,#226c71);border-radius:50% 50% 0 0/65% 65% 0 0;box-shadow:0 -32px 0 #71b9a7}.hero-copy{max-width:570px}.hero h1{font-size:clamp(2.8rem,7vw,5.4rem);line-height:1.1;letter-spacing:-.06em;margin:14px 0 18px}.hero h1 em{font-style:normal;color:#b55e43}.hero p{font-size:1.05rem;color:#385956;max-width:480px}.hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:800;background:var(--teal);color:white;box-shadow:0 8px 22px #176d6825}.btn.light{background:#fffefaad;color:var(--ink);box-shadow:none;border:1px solid #ffffffb5}.hero-note{font-size:.82rem!important;margin-top:17px}
+    .section{padding:20px 0 58px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:24px}.section h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.2;margin:8px 0}.section-head p{max-width:420px;color:var(--muted);margin:0}.holiday{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;background:var(--white);border:1px solid var(--line);border-radius:22px;padding:22px 26px;margin:22px 0 10px;box-shadow:0 10px 26px #183b3b08}.date-badge{width:66px;height:66px;display:grid;place-items:center;border-radius:20px;background:#f8e9d4;color:#8e5639;font-weight:900;text-align:center;line-height:1.2}.date-badge b{font-size:1.35rem}.holiday p{margin:2px 0;color:var(--muted)}.tag{font-size:.76rem;border-radius:999px;padding:7px 12px;background:var(--mint);color:#275b50;font-weight:800;white-space:nowrap}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:22px;min-height:200px}.card .icon{width:46px;height:46px;border-radius:15px;background:var(--mint);display:grid;place-items:center;font-size:1.35rem}.card h3{margin:13px 0 6px;font-size:1.12rem}.card p{color:var(--muted);font-size:.93rem;margin:0}.why{padding-top:22px}
+    .itinerary{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.day{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:18px 16px;position:relative}.day .num{color:var(--coral);font-size:.78rem;font-weight:900;letter-spacing:.08em}.day h3{font-size:1rem;line-height:1.35;margin:7px 0}.day p{font-size:.86rem;color:var(--muted);margin:0}.day small{display:block;margin-top:12px;color:var(--teal);font-weight:800;font-size:.78rem}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.filter{border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 15px;color:var(--muted);cursor:pointer}.filter[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}.tip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tip{background:#e7f0e9;border-radius:20px;padding:20px}.tip h3{margin:0 0 7px;font-size:1rem}.tip p{margin:0;color:#536a63;font-size:.9rem}.tip[hidden]{display:none}
+    .checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:15px 17px;display:flex;gap:11px;align-items:flex-start}.check span{color:var(--coral);font-weight:900}.check p{margin:0;color:var(--muted);font-size:.92rem}.sources{border-top:1px solid var(--line);padding:30px 0 48px;color:var(--muted);font-size:.83rem}.sources a{color:var(--teal)}.sources ul{padding-left:20px}.foot{font-size:.8rem;color:#7d8984;margin-top:20px}
+    @media(max-width:800px){.hero{min-height:510px;margin-bottom:48px}.hero:before{right:-170px;top:-70px}.hero:after{right:-250px}.cards,.tip-grid{grid-template-columns:1fr 1fr}.itinerary{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:10px}}
+    @media(max-width:540px){.wrap{width:min(100% - 28px,1120px)}.nav a{margin-left:12px;font-size:.8rem}.nav a:first-child{display:none}.hero{min-height:520px;padding:26px;border-radius:22px}.hero:before{width:330px;height:330px;right:-155px;top:10px}.hero:after{width:650px;height:210px;right:-260px;bottom:-62px}.hero-copy{align-self:flex-start}.hero p{font-size:.98rem}.holiday{grid-template-columns:auto 1fr;padding:16px;gap:12px}.holiday .tag{grid-column:2;justify-self:start}.cards,.tip-grid,.checklist{grid-template-columns:1fr}.itinerary{grid-template-columns:1fr}.day{display:grid;grid-template-columns:58px 1fr;column-gap:8px}.day .num{grid-row:span 3}.day h3{margin-top:0}.day small{margin-top:6px}}
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <div class="brand">慢慢走<span>・</span>旅行提案</div>
+    <nav aria-label="主要導覽"><a href="#idea">旅行想法</a><a href="#plan">五日行程</a><a href="#prepare">出發準備</a></nav>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="title">
+      <div class="hero-copy">
+        <div class="eyebrow">Family Island Escape · 2027</div>
+        <h1 id="title">今年過年，<br>一起去<em>海島</em>慢慢玩。</h1>
+        <p>把宿霧的海風、薄荷島的綠丘和一家人的好時光，排成一趟不趕路的旅行。</p>
+        <div class="actions"><a class="btn" href="#plan">看看五日提案 ↓</a><a class="btn light" href="#prepare">先看出發準備</a></div>
+        <p class="hero-note">依「宿霧・薄荷島」方向規劃；景點營業、船班與實際假期活動請出發前再確認。</p>
+      </div>
+    </section>
+
+    <section class="section wrap" id="idea">
+      <div class="section-head"><div><div class="eyebrow">The idea</div><h2>適合全家一起的理由</h2></div><p>城市文化、海島放空和自然景觀穿插安排；每天保留休息時間，長輩和孩子都比較好跟上。</p></div>
+      <div class="holiday"><div class="date-badge"><b>7</b><br>天連假</div><div><strong>2027 台灣春節假期：2 月 4 日至 10 日</strong><p>農曆初一是 2 月 6 日。建議先決定出發與返台日，再比較機票和住宿。</p></div><span class="tag">提案：5 天 4 夜</span></div>
+      <div class="cards why">
+        <article class="card"><div class="icon" aria-hidden="true">🌊</div><h3>海島與城市都有</h3><p>宿霧市區安排半天文化散步，再往麥克坦或薄荷島放慢步調。</p></article>
+        <article class="card"><div class="icon" aria-hidden="true">🌿</div><h3>自然體驗有深有淺</h3><p>薄荷島可看巧克力山、了解眼鏡猴保育，也能選擇河上遊船或海邊休息。</p></article>
+        <article class="card"><div class="icon" aria-hidden="true">☀️</div><h3>行程保留彈性</h3><p>每天抓一到兩個主要活動；遇到天氣或交通變化，也容易調整。</p></article>
+      </div>
+    </section>
+
+    <section class="section wrap" id="plan">
+      <div class="section-head"><div><div class="eyebrow">A gentle 5-day plan</div><h2>宿霧 × 薄荷島｜五日提案</h2></div><p>以不換太多飯店為原則。跨島交通時間與班次依實際訂位為準，避免把轉乘日排滿。</p></div>
+      <div class="itinerary">
+        <article class="day"><div class="num">DAY 01</div><h3>抵達宿霧・輕鬆入住</h3><p>先入住市區或交通方便的住宿，附近吃飯、補眠，讓全家適應旅程。</p><small>重點：不排遠程景點</small></article>
+        <article class="day"><div class="num">DAY 02</div><h3>宿霧市區・歷史散步</h3><p>挑選一至兩處歷史地標，午後回飯店休息；體力充足再去海邊看夕陽。</p><small>重點：文化與休息平衡</small></article>
+        <article class="day"><div class="num">DAY 03</div><h3>前往薄荷島・慢慢入住</h3><p>預留碼頭報到與接駁時間。抵達後先安頓行李，晚上在 Panglao 周邊用餐。</p><small>重點：船班日留白</small></article>
+        <article class="day"><div class="num">DAY 04</div><h3>薄荷島自然一日</h3><p>可安排巧克力山、眼鏡猴保育區與羅博河一帶。巧克力山觀景台約有 200 階，長輩同行先評估體力。</p><small>重點：包車或當地團較省力</small></article>
+        <article class="day"><div class="num">DAY 05</div><h3>海邊放空・返程</h3><p>依航班或船班時間安排早餐與短程活動。交通銜接要留緩衝，不壓線轉乘。</p><small>重點：先確認返程交通</small></article>
+      </div>
+    </section>
+
+    <section class="section wrap" aria-labelledby="family-title">
+      <div class="section-head"><div><div class="eyebrow">Make it yours</div><h2 id="family-title">依家人喜好調整</h2></div><p>點選一種旅行偏好，看看可以怎麼替行程加減。</p></div>
+      <div class="filters" role="group" aria-label="選擇旅行偏好"><button class="filter" aria-pressed="true" data-filter="all">全部建議</button><button class="filter" aria-pressed="false" data-filter="elders">長輩同行</button><button class="filter" aria-pressed="false" data-filter="kids">孩子同行</button><button class="filter" aria-pressed="false" data-filter="relax">想放空</button></div>
+      <div class="tip-grid">
+        <article class="tip" data-kind="elders"><h3>長輩同行｜減少搬行李</h3><p>薄荷島連住兩晚以上；跨島日安排接送，避免同一天再加遠程景點。</p></article>
+        <article class="tip" data-kind="kids"><h3>孩子同行｜安排短活動</h3><p>自然景點之間留休息和上廁所時間；海上活動先確認年齡、救生衣與天候規範。</p></article>
+        <article class="tip" data-kind="relax"><h3>想放空｜少換住宿</h3><p>選定一個海邊住宿當基地，把半天留給泳池、沙灘或午睡，不必天天趕集合。</p></article>
+      </div>
+    </section>
+
+    <section class="section wrap" id="prepare">
+      <div class="section-head"><div><div class="eyebrow">Before you go</div><h2>過年出發前先確認</h2></div><p>春節屬熱門出遊時段，先處理交通和住宿，再慢慢挑餐廳及體驗活動。</p></div>
+      <div class="checklist">
+        <div class="check"><span>01</span><p><strong>先比機票與住宿</strong><br>確認全家可出發日期、行李需求和房型，再訂可接受的方案。</p></div>
+        <div class="check"><span>02</span><p><strong>核對跨島船班</strong><br>查看營運日、行李規定、碼頭位置及延誤備案；不要只看行程表估算。</p></div>
+        <div class="check"><span>03</span><p><strong>預留交通緩衝</strong><br>機場、碼頭與住宿之間先安排接送，避免緊接下一段交通。</p></div>
+        <div class="check"><span>04</span><p><strong>出發前再看營業公告</strong><br>春節期間的景點、餐廳及船班可能調整，以官方公告和訂位回覆為準。</p></div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap sources">
+    <strong>資訊來源與提醒</strong>
+    <ul>
+      <li>2027 年台灣政府機關辦公日曆：<a href="https://www.dgpa.gov.tw/information?pid=12983&uid=82" target="_blank" rel="noreferrer">行政院人事行政總處公告</a>（春節連假 2/4–2/10）。</li>
+      <li>目的地景點概況：<a href="https://www.tourism.gov.ph/destination/central-visayas/cebu-province/" target="_blank" rel="noreferrer">菲律賓觀光部・宿霧</a>、<a href="https://www.tourism.gov.ph/destination/central-visayas/bohol/" target="_blank" rel="noreferrer">菲律賓觀光部・薄荷島</a>。</li>
+    </ul>
+    <p class="foot">這是一份初步旅遊靈感提案，不是已確認的訂位或即時交通表。價格、營業時間、船班與天候請以出發前的官方資訊為準。</p>
+  </footer>
+  <script>
+    const filters = document.querySelectorAll('.filter');
+    const tips = document.querySelectorAll('.tip');
+    filters.forEach(button => button.addEventListener('click', () => {
+      filters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      const selected = button.dataset.filter;
+      tips.forEach(tip => { tip.hidden = selected !== 'all' && tip.dataset.kind !== selected; });
+    }));
+  </script>
+</body>
+</html>
